@@ -89,13 +89,10 @@ def _detect_device_type(node) -> str:
             # one for Heat Control.
             if device_class == 'climate':
                 subnode_id = int(node.nid[-1], 16)
-                # pylint: disable=no-else-return
                 if subnode_id == 3:
                     return 'heat'
-                else:
-                    return 'cold'
+                return 'cold'
             return device_class
-
     return None
 
 
