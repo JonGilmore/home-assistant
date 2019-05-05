@@ -201,7 +201,7 @@ class ISYThermostatDevice(ISYDevice, ClimateDevice):
     @property
     def value(self):
         """Get the current value of the device."""
-        return self.fix_temp(self._node.status._val)
+        return self.fix_temp(self._node.status)
 
     @property
     def temperature_unit(self):
